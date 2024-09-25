@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gha-runner
+  labels:
+    app: gha-runner
+spec:
+  selector:
+    matchLabels:
+      api: gha-runner
+  replicas: 10
+  template:
+    metadata:
+      labels:
+        app: gha-runner
+        api: gha-runner
+    spec:
+      containers:
+        - name: gha-runner
+          image: myoung34/github-runner:ubuntu-focal
+          imagePullPolicy: Always
+          env:
+            - name: ACCESS_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: access-token
+                  key: ACCESS_TOKEN
+            - name: REPO_URL
+              value: https://github.com/jvincent-mongodb/yaml-steps-parser
+            - name: RUNNER_NAME_PREFIX
+              value: docs-gha-self-hosted-runner
