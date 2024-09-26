@@ -24,7 +24,7 @@ spec:
     value: <your-repo-url> # example: https://github.com/jvincent-mongodb/docs-gha-self-hosted-runner-pool-k8s
 ```
 
-3. Deploy the runners to K8s
+3. Deploy the runners to K8s.
 
 ```
 kubectl apply -f gha-self-hosted-deployment.yaml
