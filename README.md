@@ -17,14 +17,14 @@ spec:
   replicas: <integer-goes-here> # example: 10
 ```
 
-2. Update the `REPO_URL` env var in `gha-self-hosted-deployment.yaml` for your chosen repository.
+3. Update the `REPO_URL` env var in `gha-self-hosted-deployment.yaml` for your chosen repository.
 
 ```
 - name: REPO_URL
     value: <your-repo-url> # example: https://github.com/jvincent-mongodb/docs-gha-self-hosted-runner-pool-k8s
 ```
 
-3. Deploy the runners to K8s.
+4. Deploy the runners to K8s.
 
 ```
 kubectl apply -f gha-self-hosted-deployment.yaml
