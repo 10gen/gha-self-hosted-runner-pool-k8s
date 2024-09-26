@@ -5,7 +5,7 @@ Simple deployment for spinning up a pool of self-hosted runners in K8s for a giv
 
 ```
 kubectl create secret generic access-token \
-    --from-literal=ACCESS_TOKEN='your-gh-pat'
+    --from-literal=ACCESS_TOKEN='<your-gh-pat>'
 ```
 2. Set the number of runners you want in your pool by updating the `spec.replicas` field in `gha-self-hosted-deployment.yaml`. 
 
