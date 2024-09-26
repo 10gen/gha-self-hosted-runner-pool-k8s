@@ -27,6 +27,6 @@ spec:
                   name: access-token
                   key: ACCESS_TOKEN
             - name: REPO_URL
-              value: https://github.com/jvincent-mongodb/yaml-steps-parser
+              value: https://github.com/jvincent-mongodb/docs-gha-self-hosted-runner-pool-k8s
             - name: RUNNER_NAME_PREFIX
               value: docs-gha-self-hosted-runner
