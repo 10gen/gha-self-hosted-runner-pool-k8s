@@ -21,11 +21,16 @@ spec:
           image: myoung34/github-runner:ubuntu-focal
           imagePullPolicy: Always
           env:
-            - name: ACCESS_TOKEN
+            - name: APP_ID
               valueFrom:
                 secretKeyRef:
-                  name: access-token
-                  key: ACCESS_TOKEN
+                  name: app-id
+                  key: APP_ID
+            - name: APP_PRIVATE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: app-private-key
+                  key: APP_PRIVATE_KEY
             - name: REPO_URL
               value: https://github.com/jvincent-mongodb/docs-gha-self-hosted-runner-pool-k8s
             - name: RUNNER_NAME_PREFIX
